@@ -15,6 +15,7 @@
   "jest": {
     "preset": "jest-expo"
   },
+
   "dependencies": {
     "@expo/vector-icons": "^14.0.0",
     "@react-navigation/native": "^6.0.2",
@@ -38,6 +39,15 @@
     "react-native-screens": "^3.31.1",
     "react-native-web": "~0.19.10"
   },
+  
+    "expo": {
+      "splash": {
+        "image": "./assets/splash.png",
+        "resizeMode": "contain",
+        "backgroundColor": "#ffffff"
+      }
+  },
+  
   "devDependencies": {
     "@babel/core": "^7.20.0",
     "@types/jest": "^29.5.12",
