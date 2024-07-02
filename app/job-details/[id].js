@@ -23,28 +23,28 @@ import useFetch from "../../hook/useFetch";
 const tabs = ["About", "Qualifications", "Responsibilities"];
 
 const JobDetails = () => {
-  const params = useLocalSearchParams();
+  const params = useLocalSearchParams(); // local search params is used to get the search params from the server. search params is the data that is being searched by the user.
   const router = useRouter();
 
-  const { data, isLoading, error, refetch } = useFetch("job-details", {
-    job_id: params.id,
+  const { data, isLoading, error, refetch } = useFetch("job-details", { // it is used to fetch the data from the server and display it on the screen from useFetch.js
+    job_id: params.id, // it is used to get the job id from the server. params is used to get the id from the server 
   });
 
-  const [activeTab, setActiveTab] = useState(tabs[0]);
-  const [refreshing, setRefreshing] = useState(false);
+  const [activeTab, setActiveTab] = useState(tabs[0]); // it is used to set the active tab to the first tab means the first tab will be active when the screen is loaded
+  const [refreshing, setRefreshing] = useState(false); // it is used to set the refreshing to false means the screen is not refreshing
 
-  const onRefresh = useCallback(() => {
-    setRefreshing(true);
-    refetch()
-    setRefreshing(false)
+  const onRefresh = useCallback(() => { // it is used to refresh the screen. callback is used to call the function when the screen is refreshed
+    setRefreshing(true); // it is used to set the refreshing to true means the screen is refreshing
+    refetch() // it is used to refetch the data from the server 
+    setRefreshing(false) // it is used to set the refreshing to false means the screen is not refreshing
   }, []);
 
 
-  const displayTabContent = () => {
-    switch (activeTab) {
+  const displayTabContent = () => { // it is used to display the tab content on the screen tab content is the data that is being displayed on the screen
+    switch (activeTab) { // it is used to switch the active tab. switch is used to switch the tab
       case "Qualifications":
         return (
-          <Specifics
+          <Specifics // it is used to display the specific data on the screen according to the choice of the user
             title='Qualifications'
             points={data[0].job_highlights?.Qualifications ?? ["N/A"]}
           />
@@ -103,8 +103,8 @@ const JobDetails = () => {
           ) : (
             <View style={{ padding: SIZES.medium, paddingBottom: 100 }}>
               <Company
-                companyLogo={data[0].employer_logo}
-                jobTitle={data[0].job_title}
+                companyLogo={data[0].employer_logo} // it is used to get the employer logo from the server [0] is used to get the first logo from the server
+                jobTitle={data[0].job_title} // it is used to get the job title from the server
                 companyName={data[0].employer_name}
                 location={data[0].job_country}
               />

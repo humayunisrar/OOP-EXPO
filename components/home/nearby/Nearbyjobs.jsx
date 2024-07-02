@@ -10,7 +10,7 @@ import useFetch from "../../../hook/useFetch";
 const Nearbyjobs = () => {
   const router = useRouter();
   const { data, isLoading, error } = useFetch("search", {
-    query: "React Native developer",
+    query: "React developer",
     num_pages: "1",
   });
 
@@ -32,8 +32,8 @@ const Nearbyjobs = () => {
           data?.map((job) => (
             <NearbyJobCard
               job={job}
-              key={`nearby-job-${job.job_id}`}
-              handleNavigate={() => router.push(`/job-details/${job.job_id}`)}
+              key={`nearby-job-${job.job_id}`} // key ko nearby-job-job_id se set kia. “Key ko unique banane ke liye job_id ka use kia.” nearby-job-job_id se set kia ta ke unique ho
+              handleNavigate={() => router.push(`/job-details/${job.job_id}`)} // handleNavigate ye krta ke job details pe jaye jab card press ho 
             />
           ))
         )}

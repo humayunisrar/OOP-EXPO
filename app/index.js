@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { SafeAreaView, ScrollView, View } from "react-native";
 import { Stack, useRouter } from "expo-router";
-
 import { COLORS, icons, images, SIZES } from "../constants";
 import {
   Nearbyjobs,
@@ -11,8 +10,8 @@ import {
 } from "../components";
 
 const Home = () => {
-  const router = useRouter()
-  const [searchTerm, setSearchTerm] = useState("");
+  const router = useRouter(); // router is used to get the router from the server
+  const [searchTerm, setSearchTerm] = useState(""); // search term is used to set the search term to the empty string
 
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.lightWhite }}>
