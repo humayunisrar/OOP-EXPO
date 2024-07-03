@@ -60,7 +60,7 @@ const Welcome = ({ searchTerm, setSearchTerm, handleClick }) => {
               <Text style={styles.tabText(activeJobType, item)}>{item}</Text>
             </Pressable>
           )}
-          keyExtractor={(item) => item}
+          keyExtractor={(item) => item} // it is used to give a unique key to each item in the list 
           contentContainerStyle={{ columnGap: SIZES.small }}
           horizontal
         />

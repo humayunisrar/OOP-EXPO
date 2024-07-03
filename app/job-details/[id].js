@@ -39,7 +39,6 @@ const JobDetails = () => {
     setRefreshing(false) // it is used to set the refreshing to false means the screen is not refreshing
   }, []);
 
-
   const displayTabContent = () => { // it is used to display the tab content on the screen tab content is the data that is being displayed on the screen
     switch (activeTab) { // it is used to switch the active tab. switch is used to switch the tab
       case "Qualifications":
@@ -54,7 +53,6 @@ const JobDetails = () => {
         return (
           <JobAbout info={data[0].job_description ?? "No data provided"} />
         );
-
       case "Responsibilities":
         return (
           <Specifics
@@ -108,7 +106,6 @@ const JobDetails = () => {
                 companyName={data[0].employer_name}
                 location={data[0].job_country}
               />
-
               <JobTabs
                 tabs={tabs}
                 activeTab={activeTab}

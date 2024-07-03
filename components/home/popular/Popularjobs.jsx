@@ -25,8 +25,8 @@ const Popularjobs = () => {
     router.push(`/job-details/${item.job_id}`); //router push kia jab card press ho to job details pe jaye based on job id
     setSelectedJob(item.job_id); //selectedJob ko item.job_id se set kia .“Selected job ID ko state mein update karta hai.”
   };
-
   return (
+    
     <View style={styles.container}> 
       <View style={styles.header}> 
         <Text style={styles.headerTitle}>Popular jobs</Text> 

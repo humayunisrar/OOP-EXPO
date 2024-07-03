@@ -29,7 +29,7 @@ const Nearbyjobs = () => {
         ) : error ? (
           <Text>Something went wrong</Text>
         ) : (
-          data?.map((job) => (
+          data?.map((job) => ( // data use fetch se retrive krwaya hai or map krwya 
             <NearbyJobCard
               job={job}
               key={`nearby-job-${job.job_id}`} // key ko nearby-job-job_id se set kia. “Key ko unique banane ke liye job_id ka use kia.” nearby-job-job_id se set kia ta ke unique ho
